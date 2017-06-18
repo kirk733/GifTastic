@@ -1,5 +1,19 @@
 $(document).ready(function() {
-    var still = [];
+
+  //Array created per homework instructions
+    var topics = [
+    "Oakland Raiders",
+    "Kansas City Chiefs",
+    "Dallas Cowboys",
+    "Denver Broncos",
+    "Seattle Seahawks",
+    "Minnesota Vikings",
+    "Houston Texans"
+  ]
+
+
+  // function to display initial buttons on the page
+  createButtons();
 
     // Adding click event listen listener to all buttons
     $("button").on("click", function() {
@@ -18,8 +32,6 @@ $(document).ready(function() {
           // storing the data from the AJAX request in the results variable
           var results = response.data;
 
-          console.log(results);
-
           // Looping through each result item
           for (var i = 0; i < results.length; i++) {
             // Creating and storing a div tag
@@ -28,7 +40,7 @@ $(document).ready(function() {
             // Creating a paragraph tag with the result item's rating
 
 
-            var p = $("<p>").text("Rating: " + results[i].rating);
+            var p = $("<p>").text("Image Rating: " + results[i].rating + "   (Click Image to see the Action)");
             // Creating and storing an image tag
             var footballImage = $("<img>");
 
@@ -43,11 +55,33 @@ $(document).ready(function() {
             // Appending the paragraph and image tag to the footballDiv
             footballDiv.append(p);
             footballDiv.append(footballImage);
+
             // Prependng the footballDiv to the HTML page in the "#gifs-appear-here" div
             $("#gifs-appear-here").prepend(footballDiv);
           }
         });
     });
+
+   //function to create initial buttons on the page from array
+   function createButtons() {
+    $("#buttons-here").empty();
+
+    for (var i = 0; i < topics.length; i++){
+      var button = $("<button>");
+      button.attr("data-football", topics[i]);
+      button.text(topics[i]);
+      $("#buttons-here").append(button);
+    }
+  }
+
+  $("#addButton").on("click", function(event) {
+    event.preventDefault();
+
+    var newButton = $("#inputText").val().trim();
+    $("#search-input").val("");
+    topics.push(newButton);
+    createButtons();
+  })
 
    $(document).on("click", ".moveornot", function(){
 
@@ -63,6 +97,6 @@ $(document).ready(function() {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
           }
- })
+    })
 
   })
