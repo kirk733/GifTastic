@@ -14,12 +14,14 @@ $(document).ready(function() {
 
  //function to create initial buttons on the page from array
    function createButtons() {
+    
     $("#buttons-here").empty();
 
     for (var i = 0; i < topics.length; i++){
       var button = $("<button>");
       button.attr("data-starwars", topics[i]);
       button.text(topics[i]);
+      button.addClass("newButtonClass");
       $("#buttons-here").append(button);
     }
   }
@@ -28,6 +30,8 @@ $(document).ready(function() {
   // function to display initial buttons on the page
   createButtons();
 
+
+// function to display buttons on page
   $("#addButton").on("click", function(event) {
     event.preventDefault();
     var newButton = $("#inputText").val();
@@ -36,8 +40,9 @@ $(document).ready(function() {
     createButtons();
   })
 
+$(document).on("click", ".newButtonClass", function(){
     // Adding click event listen listener to all buttons
-    $("button").on("click", function() {
+   // $("button").on("click", function() {
       // Grabbing and storing the data-starwars property value from the button
       var starwars = $(this).attr("data-starwars");
       // Constructing a queryURL using the starwars name
@@ -91,7 +96,7 @@ $(document).ready(function() {
           // storing the data-state of the gif into a variable
           var state = $(this).attr("data-state");
 
-          
+          //checking state to toggle if necessary
           if(state === "still"){
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
