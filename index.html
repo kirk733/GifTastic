@@ -4,27 +4,72 @@
 <head>
   <meta charset="utf-8">
   <title>Star Wars Buttons</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   
+  <!-- Viewport tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Link to jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+  <!-- Link to javascript -->
   <script src="starwars.js"></script>
+
+  
+
 </head>
 
 <body>
 <div class="jumbotron">
-  <h1>Star Wars Giphs!!</h1>      
+  <h1>Star Wars Giphs!!</h1>  
+
+
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+     <div class="container">
+  <div>
+    <div type="button" class="btn" id="buttons-here"></div>   
+  </div>     
+</div>
+  </div>
+
+ 
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+     <div class="container">
+  <div>
+    <div type="button" class="btn" id="buttons-here"></div>   
+  </div>     
+</div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="container" id="mypanel">
+  <div class="panel panel-default">
+    <div class="panel-heading">Add Star Wars Character Button</div>
+      <form action="/action_page.php">
+          <input type="text" name="lastname" value="" id="inputText">
+          <input type="submit" value="Submit" id="addButton">
+      </form>
+  </div>
+</div>
+  </div>
+
+ 
 </div>
 
 
 
 
-<div class="container">
-<div>
-  <div type="button" class="btn" id="buttons-here"></div>   
-</div>     
-</div>
+<br>
 
 <div id="gifs-appear-here"></div>
 
