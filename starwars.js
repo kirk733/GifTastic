@@ -12,8 +12,29 @@ $(document).ready(function() {
   ]
 
 
+ //function to create initial buttons on the page from array
+   function createButtons() {
+    $("#buttons-here").empty();
+
+    for (var i = 0; i < topics.length; i++){
+      var button = $("<button>");
+      button.attr("data-starwars", topics[i]);
+      button.text(topics[i]);
+      $("#buttons-here").append(button);
+    }
+  }
+
+
   // function to display initial buttons on the page
   createButtons();
+
+  $("#addButton").on("click", function(event) {
+    event.preventDefault();
+    var newButton = $("#inputText").val();
+    $("#inputText").val("");
+    topics.push(newButton);
+    createButtons();
+  })
 
     // Adding click event listen listener to all buttons
     $("button").on("click", function() {
@@ -62,30 +83,13 @@ $(document).ready(function() {
         });
     });
 
-   //function to create initial buttons on the page from array
-   function createButtons() {
-    $("#buttons-here").empty();
-
-    for (var i = 0; i < topics.length; i++){
-      var button = $("<button>");
-      button.attr("data-starwars", topics[i]);
-      button.text(topics[i]);
-      $("#buttons-here").append(button);
-    }
-  }
-
-  $("#addButton").on("click", function(event) {
-    event.preventDefault();
-    var newButton = $("#inputText").val().trim();
-    $("#inputText").val("");
-    topics.push(newButton);
-    createButtons();
-  })
+  
+  
 
    $(document).on("click", ".moveornot", function(){
 
-              // storing the data-state of the gif into a variable
-              var state = $(this).attr("data-state");
+          // storing the data-state of the gif into a variable
+          var state = $(this).attr("data-state");
 
           
           if(state === "still"){

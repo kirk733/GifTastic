@@ -1,18 +1,31 @@
+body{
+
+	background-color: grey;
+}
+
 #mypanel{
 max-width: 270px;
 background-color: grey;
 	
 }
-
+.container{
+	float: left;
+}
 .jumbotron{
 
 	background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/09/star-wars-wallpaper-24.jpg");
 
 	text-align: center;
-	text-color: white;
+	
 }
 
-body{
-
+.container {
 	background-color: grey;
+}
+#gifs-appear-here{
+	padding-left: 15px;
+}
+
+#buttons-here{
+	padding-left: 0px;
 }
