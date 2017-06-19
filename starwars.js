@@ -2,12 +2,12 @@ $(document).ready(function() {
 
   //Array created per homework instructions
     var topics = [
-    "Luke",
-    "Leia",
-    "Chewba",
-    "yoda",
-    "storm trooper",
-    "obi-whan",
+    "Luke Skywalker",
+    "Princess Leia",
+    "Chewbacca",
+    "Yoda",
+    "Kylo Ren",
+    "Obi-Wan Kenobi",
     "Han Solo"
   ]
 
