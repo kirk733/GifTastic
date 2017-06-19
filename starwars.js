@@ -6,9 +6,9 @@ $(document).ready(function() {
     "Leia",
     "Chewba",
     "yoda",
-    "trooper",
+    "storm trooper",
     "obi-whan",
-    "Emperor"
+    "Han Solo"
   ]
 
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
       // Grabbing and storing the data-starwars property value from the button
       var starwars = $(this).attr("data-starwars");
       // Constructing a queryURL using the starwars name
-      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
         starwars + "&api_key=dc6zaTOxFJmzC&limit=10";
       // Performing an AJAX request with the queryURL
       $.ajax({
