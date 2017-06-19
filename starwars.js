@@ -76,9 +76,8 @@ $(document).ready(function() {
 
   $("#addButton").on("click", function(event) {
     event.preventDefault();
-
     var newButton = $("#inputText").val().trim();
-    $("#search-input").val("");
+    $("#inputText").val("");
     topics.push(newButton);
     createButtons();
   })
